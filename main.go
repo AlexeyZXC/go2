@@ -69,5 +69,4 @@ func main() {
 
 	var a int
 	_ = a / a
-
 }
