@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 	"time"
+
+	go1 "github.com/AlexeyZXC/go1/v2"
 )
 
 type myError struct {
@@ -52,6 +54,8 @@ func accessFile() {
 }
 
 func main() {
+
+	_ = go1.ConsoleTest //just for learn purpose
 
 	accessFile()
 
