@@ -1,3 +1,8 @@
+// Package contains code for lesson1 and lesson2.
+//
+// And here is some bug? The page doesn't contain docs for the exported functions.
+//
+//Thoughts?
 package main
 
 import (
@@ -11,7 +16,9 @@ type myError struct {
 	errorMsg  string
 }
 
+// NewErr creates and returns myError derived from error.
 func NewErr(_err interface{}) error {
+	//BUG not displayed comment by godoc
 	var msg string
 	if e, ok := _err.(error); ok {
 		msg = e.Error()
@@ -22,11 +29,13 @@ func NewErr(_err interface{}) error {
 	}
 }
 
+// Error implements Error() of error.
 func (myerr *myError) Error() string {
 	return fmt.Sprintf("error time: %v; \n msg: %v ", myerr.errorTime, myerr.errorMsg)
 }
 
-func accessFile() {
+// AccessFile work with file and close it on return using defer.
+func AccessFile() {
 	var f *os.File
 	var err error
 
@@ -46,14 +55,14 @@ func accessFile() {
 	if _, err := f.WriteString("content"); err != nil {
 		fmt.Println("WriteString error")
 		return
-	} else {
-		fmt.Println("WriteString ok")
 	}
+	fmt.Println("WriteString ok")
+
 }
 
 func main() {
 
-	accessFile()
+	AccessFile()
 
 	defer func() {
 		if err := recover(); err != nil {
