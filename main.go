@@ -51,22 +51,41 @@ func accessFile() {
 	}
 }
 
-func main() {
-
-	accessFile()
+func poolOfWorkers() {
+	var workers = make(chan struct{}, 1)
+	var value int = 0
 
 	defer func() {
-		if err := recover(); err != nil {
-			myerr := NewErr(err)
-			fmt.Println("!!! panic recovered-1, myErr: ", myerr)
-
-			var e error
-			e, _ = err.(error)
-			myerr2 := fmt.Errorf("%w; \ntime: %v", e, time.Now())
-			fmt.Println("!!! panic recovered-2, myErr2: ", myerr2)
-		}
+		fmt.Println("poolOfWorkers final value: ", value)
 	}()
 
-	var a int
-	_ = a / a
+	for i := 0; i < 1000; i++ {
+		go func() {
+			value++
+			workers <- struct{}{}
+		}()
+		<-workers
+	}
+}
+
+func main() {
+
+	poolOfWorkers()
+
+	// accessFile()
+
+	// defer func() {
+	// 	if err := recover(); err != nil {
+	// 		myerr := NewErr(err)
+	// 		fmt.Println("!!! panic recovered-1, myErr: ", myerr)
+
+	// 		var e error
+	// 		e, _ = err.(error)
+	// 		myerr2 := fmt.Errorf("%w; \ntime: %v", e, time.Now())
+	// 		fmt.Println("!!! panic recovered-2, myErr2: ", myerr2)
+	// 	}
+	// }()
+
+	// var a int
+	// _ = a / a
 }
