@@ -52,47 +52,41 @@ func accessFile() {
 }
 
 type worker struct {
-	pVlaue  *int
-	closeCh chan struct{}
+	pVlaue *int
+	syncCh chan struct{}
 }
 
 func NewWorker(syncCh chan struct{}) worker {
 	return worker{
 		pVlaue: nil,
-		//closeCh: make(chan struct{}, 1),
-		closeCh: syncCh,
+		syncCh: syncCh,
 	}
 }
 
 func (w worker) StartWorker(v *int) {
 	w.pVlaue = v
 	go func() {
+		<-w.syncCh
 		*w.pVlaue++
-		<-w.closeCh
 	}()
 }
 
 func (w worker) Stop() {
-	w.closeCh <- struct{}{}
+	w.syncCh <- struct{}{}
 }
 
 func poolOfWorkers() {
-	var sync = make(chan struct{}, 1)
+	var syncCh = make(chan struct{}, 1)
 	var value int = 0
 
 	defer func() {
 		fmt.Println("poolOfWorkers final value: ", value)
 	}()
 
-	for i := 0; i < 1000; i++ {
-		// go func() {
-		// 	value++
-		// 	workers <- struct{}{}
-		// }()
-		// <-workers
+	syncCh <- struct{}{} // start the first worker
 
-		//		*worker pw
-		w := NewWorker(sync)
+	for i := 0; i < 1000; i++ {
+		w := NewWorker(syncCh)
 		w.StartWorker(&value)
 		w.Stop()
 	}
