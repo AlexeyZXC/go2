@@ -1,8 +1,11 @@
 package main
 
 import (
+	"context"
+	"errors"
 	"fmt"
 	"os"
+	"os/signal"
 	"time"
 )
 
@@ -94,7 +97,30 @@ func poolOfWorkers() {
 
 func main() {
 
+	// task 1
 	poolOfWorkers()
+
+	// task 2
+	var cancel context.CancelFunc
+	ctx := context.Background()
+
+	ch := make(chan os.Signal, 1)
+	signal.Notify(ch, os.Interrupt) // there is no SIGTERM on Windows
+	fmt.Println("waiting for Interrupt... ")
+
+	s := <-ch
+
+	fmt.Println("received Interrupt: ", s)
+	ctx, cancel = context.WithTimeout(ctx, time.Millisecond)
+	defer cancel()
+
+	<-ctx.Done()
+
+	err := ctx.Err()
+	fmt.Println(errors.Is(err, context.Canceled), errors.Is(err, context.DeadlineExceeded))
+
+	//time.Sleep(time.Second)
+	//fmt.Println("sleep done")
 
 	// accessFile()
 
