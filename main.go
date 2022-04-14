@@ -3,6 +3,9 @@ package main
 import (
 	"fmt"
 	"os"
+	"runtime"
+	"runtime/trace"
+	"sync"
 	"time"
 )
 
@@ -51,22 +54,134 @@ func accessFile() {
 	}
 }
 
-func main() {
-
-	accessFile()
-
+// Для программы, которая использует
+// мьютекс для безопасного доступа к
+// данным из нескольких потоков,
+// выполните трассировку
+func lesson6_1() {
+	j := 0
 	defer func() {
-		if err := recover(); err != nil {
-			myerr := NewErr(err)
-			fmt.Println("!!! panic recovered-1, myErr: ", myerr)
-
-			var e error
-			e, _ = err.(error)
-			myerr2 := fmt.Errorf("%w; \ntime: %v", e, time.Now())
-			fmt.Println("!!! panic recovered-2, myErr2: ", myerr2)
-		}
+		fmt.Println("\n j= ", j)
 	}()
 
-	var a int
-	_ = a / a
+	fo, err := os.Create("trace_6_1.out")
+	if err != nil {
+		panic(err)
+	}
+	defer func() {
+		fo.Close()
+	}()
+
+	trace.Start(fo)
+	defer trace.Stop()
+
+	m := sync.Mutex{}
+	wg := &sync.WaitGroup{}
+	n := 100
+
+	for i := 0; i < n; i++ {
+		wg.Add(1)
+		go func() {
+			m.Lock()
+			defer m.Unlock()
+			defer wg.Done()
+
+			j++
+			fmt.Printf("%v ", j)
+		}()
+	}
+
+	wg.Wait()
+}
+
+// Написать многопоточную программу,
+// в которой будет использоваться
+// явный вызов планировщика
+// runtime.Gosched. Запустите ее с
+// GOMAXPROCS=1 и выполните
+// трассировку
+func lesson6_2() {
+	fo, err := os.Create("trace_6_2.out")
+	if err != nil {
+		panic(err)
+	}
+	defer func() {
+		fo.Close()
+	}()
+
+	trace.Start(fo)
+	defer trace.Stop()
+
+	runtime.GOMAXPROCS(1)
+
+	wg := sync.WaitGroup{}
+
+	for i := 0; i < 10; i++ {
+		wg.Add(1)
+		go func() {
+			defer runtime.Gosched()
+			fmt.Println("hello")
+			wg.Done()
+		}()
+
+		wg.Add(1)
+		go func() {
+			defer runtime.Gosched()
+			fmt.Println("world")
+			wg.Done()
+		}()
+	}
+
+	wg.Wait()
+}
+
+// Смоделируйте состояние гонки.
+// Проверьте модель на наличие
+// состояния гонки
+func lesson6_3() {
+	j := 0
+	defer func() {
+		fmt.Println("\n j= ", j)
+	}()
+
+	//m := sync.Mutex{}
+	wg := &sync.WaitGroup{}
+
+	for i := 0; i < 100; i++ {
+		wg.Add(1)
+		go func() {
+			//m.Lock()
+			//defer m.Unlock()
+			defer wg.Done()
+
+			j++
+			fmt.Printf("%v ", j)
+		}()
+	}
+
+	wg.Wait()
+}
+
+func main() {
+
+	lesson6_3()
+	//lesson6_2()
+	//lesson6_1()
+
+	// accessFile()
+
+	// defer func() {
+	// 	if err := recover(); err != nil {
+	// 		myerr := NewErr(err)
+	// 		fmt.Println("!!! panic recovered-1, myErr: ", myerr)
+
+	// 		var e error
+	// 		e, _ = err.(error)
+	// 		myerr2 := fmt.Errorf("%w; \ntime: %v", e, time.Now())
+	// 		fmt.Println("!!! panic recovered-2, myErr2: ", myerr2)
+	// 	}
+	// }()
+
+	// var a int
+	// _ = a / a
 }
