@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"reflect"
 	"time"
 )
 
@@ -51,22 +52,55 @@ func accessFile() {
 	}
 }
 
+// Написать функцию, которая принимает на вход структуру in (struct или
+// 	кастомную struct) и values map[string]interface{} (key - название поля
+// 	структуру, которому нужно присвоить value этой мапки). Необходимо по
+// 	значениям из мапы изменить входящую структуру in с помощью пакета
+// 	reflect. Функция может возвращать только ошибку error. Написать к данной
+// 	функции тесты (чем больше, тем лучше - зачтется в плюс).
+
+type In struct {
+	i int
+	s string
+	a [3]byte
+}
+
+func assign(in *In, m map[string]interface{}) error {
+	inV := reflect.ValueOf(in)
+	fmt.Println("inV: ", inV)
+	fmt.Println("inV.Elem(): ", inV.Elem())
+	fmt.Println("inV.Elem().FieldByIndex: ", inV.Elem().FieldByIndex([]int{1}))
+	fmt.Println("inV.Elem().FieldByName: ", inV.Elem().FieldByName("s"))
+	fmt.Println("inV.Elem().NumField(): ", inV.Elem().NumField())
+
+	for i := 0; i < inV.Elem().NumField(); i++ {
+
+	}
+
+	//fmt.Println("inV.FieldByIndex: ", inV.FieldByIndex([]int{0}))
+	// var (
+	// 	v   reflect.Value
+	// 	err error
+	// )
+	// if v, err = inV.FieldByIndexErr([]int{0}); err != nil {
+	// 	fmt.Println("FieldByIndexErr err: ", err)
+	// }
+
+	// fmt.Println("inV.FieldByIndexErr: ", v)
+
+	return nil
+}
+
 func main() {
 
-	accessFile()
+	in := In{i: 1, s: "asd", a: [3]byte{1, 2, 3}}
+	m := map[string]interface{}{"i": 5, "s": "qwe", "a": [3]byte{4, 5, 6}}
 
-	defer func() {
-		if err := recover(); err != nil {
-			myerr := NewErr(err)
-			fmt.Println("!!! panic recovered-1, myErr: ", myerr)
+	fmt.Println("in: ", in)
+	fmt.Println("m: ", m)
 
-			var e error
-			e, _ = err.(error)
-			myerr2 := fmt.Errorf("%w; \ntime: %v", e, time.Now())
-			fmt.Println("!!! panic recovered-2, myErr2: ", myerr2)
-		}
-	}()
+	assign(&in, m)
 
-	var a int
-	_ = a / a
+	fmt.Println("in: ", in)
+
 }
