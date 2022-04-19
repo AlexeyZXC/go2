@@ -1,9 +1,11 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"reflect"
+	"strings"
 	"time"
 )
 
@@ -60,46 +62,48 @@ func accessFile() {
 // 	функции тесты (чем больше, тем лучше - зачтется в плюс).
 
 type In struct {
-	i int
-	s string
-	a [3]byte
+	I int
+	S string
 }
 
-func assign(in *In, m map[string]interface{}) error {
+func Assign(in *In, m map[string]interface{}) (err error) {
+	defer func() {
+		if err2 := recover(); err2 != nil {
+			switch x := err2.(type) {
+			case string:
+				err = errors.New(x)
+			case error:
+				err = x
+			default:
+				// Fallback err (per specs, error strings should be lowercase w/o punctuation
+				err = errors.New("unknown panic")
+			}
+		}
+	}()
+
 	inV := reflect.ValueOf(in)
-	fmt.Println("inV: ", inV)
-	fmt.Println("inV.Elem(): ", inV.Elem())
-	fmt.Println("inV.Elem().FieldByIndex: ", inV.Elem().FieldByIndex([]int{1}))
-	fmt.Println("inV.Elem().FieldByName: ", inV.Elem().FieldByName("s"))
-	fmt.Println("inV.Elem().NumField(): ", inV.Elem().NumField())
 
-	for i := 0; i < inV.Elem().NumField(); i++ {
-
+	for v, inter := range m {
+		switch vv := inter.(type) {
+		case int:
+			inV.Elem().FieldByName(strings.ToUpper(v)).SetInt(int64(vv))
+		case string:
+			inV.Elem().FieldByName(strings.ToUpper(v)).SetString(vv)
+		}
 	}
 
-	//fmt.Println("inV.FieldByIndex: ", inV.FieldByIndex([]int{0}))
-	// var (
-	// 	v   reflect.Value
-	// 	err error
-	// )
-	// if v, err = inV.FieldByIndexErr([]int{0}); err != nil {
-	// 	fmt.Println("FieldByIndexErr err: ", err)
-	// }
-
-	// fmt.Println("inV.FieldByIndexErr: ", v)
-
-	return nil
+	return
 }
 
 func main() {
 
-	in := In{i: 1, s: "asd", a: [3]byte{1, 2, 3}}
-	m := map[string]interface{}{"i": 5, "s": "qwe", "a": [3]byte{4, 5, 6}}
+	in := In{I: 1, S: "asd"}
+	m := map[string]interface{}{"i": 5, "s": "qwe"}
 
 	fmt.Println("in: ", in)
 	fmt.Println("m: ", m)
 
-	assign(&in, m)
+	Assign(&in, m)
 
 	fmt.Println("in: ", in)
 
