@@ -1,0 +1,16 @@
+package foo
+
+import (
+	"fmt"
+	"time"
+)
+
+func bar2() {
+	fmt.Println(time.Now())
+	go func() {
+		fmt.Println(time.Now())
+	}()
+	go func() {
+		fmt.Println(time.Now())
+	}()
+}
