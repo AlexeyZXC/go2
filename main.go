@@ -3,6 +3,9 @@ package main
 import (
 	"errors"
 	"fmt"
+	"go/ast"
+	"go/parser"
+	"go/token"
 	"os"
 	"reflect"
 	"strings"
@@ -95,16 +98,67 @@ func Assign(in *In, m map[string]interface{}) (err error) {
 	return
 }
 
+// Написать функцию, которая принимает на вход имя файла и название функции. Необходимо
+// подсчитать в этой функции количество вызовов асинхронных функций. Результат работы
+// должен возвращать количество вызовов int и ошибку error. Разрешается использовать только
+// go/parser, go/ast и go/token.
+
+func findAsyncFuncs(file, funcName string) (int, error) {
+
+	fset := token.NewFileSet()
+
+	astFile, err := parser.ParseFile(fset, file, nil, parser.AllErrors)
+	if err != nil {
+		fmt.Println(err)
+		return 0, err
+	}
+
+	var goNum int
+
+	for _, f := range astFile.Decls {
+		fn, ok := f.(*ast.FuncDecl)
+		if !ok {
+			continue
+		}
+
+		if fn.Name.Name != funcName {
+			continue
+		}
+
+		for _, st := range fn.Body.List {
+			switch st.(type) {
+			case *ast.GoStmt:
+				goNum++
+			}
+		}
+	}
+
+	return goNum, nil
+}
+
 func main() {
+
+	fmt.Println("--- Task 1 ---")
 
 	in := In{I: 1, S: "asd"}
 	m := map[string]interface{}{"i": 5, "s": "qwe"}
 
-	fmt.Println("in: ", in)
+	fmt.Println("before in: ", in)
 	fmt.Println("m: ", m)
 
 	Assign(&in, m)
 
-	fmt.Println("in: ", in)
+	fmt.Println(" after in: ", in)
+
+	// task 2
+
+	fmt.Println("--- Task 2 ---")
+
+	n, err := findAsyncFuncs("file1.txt", "bar2")
+	if err != nil {
+		fmt.Println("Error: ", err)
+	}
+
+	fmt.Println("Async funcs: ", n)
 
 }
