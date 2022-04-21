@@ -1,5 +1,11 @@
 package main
 
+import (
+	"flag"
+	"fmt"
+	"os"
+)
+
 // Практическое задание
 // В качестве завершающего задания нужно выполнить программу поиска дубликатов файлов.
 // Дубликаты файлов - это файлы, которые совпадают по имени файла и по его размеру.
@@ -24,6 +30,49 @@ package main
 // 6. Программа должна уведомлять пользователя об ошибках, возникающих во время
 // выполнения
 
+// type Item struct{
+// 	Name string
+// 	size uint64
+// 	dublicate bool
+// }
+
+var (
+	dublicates []string
+	items      map[string]uint64
+)
+
 func main() {
+	dir := flag.String("dir", "", "A directory to process")
+	removeDup := flag.Bool("rem", false, "True value is about to remove duplicate files")
+	flag.Parse()
+
+	fmt.Println("removeDup: ", *removeDup)
+
+	defer func() {
+		if err := recover(); err != nil {
+			switch v := err.(type) {
+			case string, error:
+				fmt.Println("Panic happened: ", v)
+			default:
+				fmt.Println("Panic happened: ", v)
+			}
+		}
+
+	}()
+
+	if *dir == "" {
+		*dir, _ = os.Getwd()
+	}
+
+	if _, err := os.Stat(*dir); err != nil {
+		if os.IsNotExist(err) {
+			fmt.Println("Error: directory does not exist: ", *dir)
+			return
+		}
+	}
+
+	fmt.Println("dir: ", *dir)
+
+	// arguments ok now
 
 }
