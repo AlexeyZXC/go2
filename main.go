@@ -3,7 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
+	"io/fs"
 	"os"
+	"sync"
 )
 
 // Практическое задание
@@ -37,9 +39,46 @@ import (
 // }
 
 var (
-	dublicates []string
-	items      map[string]uint64
+	duplicates []string
+	items      map[string]uint64 // path and size
+	wg         sync.WaitGroup
 )
+
+func walk(dir string) error {
+	f, _ := os.Open(dir)
+	//defer f.Close()
+	defer wg.Done()
+
+	list, err := f.ReadDir(0)
+	f.Close()
+	if err != nil {
+		return err
+	}
+
+	var (
+		size int64
+		info fs.FileInfo
+	)
+
+	for _, v := range list {
+		if info, err = v.Info(); err != nil {
+			fmt.Println("Error on info: ", err)
+		}
+		if info == nil {
+			continue
+		}
+		size = info.Size()
+
+		fmt.Printf("%v - %v - %v; path: %v\n", v.Name(), v.IsDir(), size, dir+"\\"+v.Name())
+
+		if v.IsDir() {
+			wg.Add(1)
+			go walk(dir + "\\" + v.Name())
+		}
+	}
+
+	return nil
+}
 
 func main() {
 	dir := flag.String("dir", "", "A directory to process")
@@ -71,8 +110,33 @@ func main() {
 		}
 	}
 
+	*dir = "C:\\gb\\go2\\test"
+
 	fmt.Println("dir: ", *dir)
 
 	// arguments ok now
+
+	items = make(map[string]uint64)
+	wg = sync.WaitGroup{}
+
+	wg.Add(1)
+	go walk(*dir)
+
+	wg.Wait()
+
+	// err := filepath.Walk(*dir, func(path string, info os.FileInfo, err error) error {
+	// 	fmt.Printf("%v - %v - %v\n", path, info.IsDir(), info.Size())
+	// 	if v, ok := items[path]; ok {
+	// 		if v == uint64(info.Size()) {
+	// 			duplicates = append(duplicates, path)
+	// 			return nil
+	// 		}
+	// 	}
+	// 	items[path] = uint64(info.Size())
+	// 	return nil
+	// })
+	// if err != nil {
+	// 	panic(err)
+	// }
 
 }
