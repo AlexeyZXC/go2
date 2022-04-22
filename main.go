@@ -6,6 +6,7 @@ import (
 	"io/fs"
 	"os"
 	"sync"
+	"sync/atomic"
 )
 
 // Практическое задание
@@ -32,22 +33,18 @@ import (
 // 6. Программа должна уведомлять пользователя об ошибках, возникающих во время
 // выполнения
 
-// type Item struct{
-// 	Name string
-// 	size uint64
-// 	dublicate bool
-// }
-
 var (
 	duplicates []string
 	items      map[string]uint64 // path and size
 	wg         sync.WaitGroup
+	ch         chan struct{}
+	dirCount   uint64
 )
 
 func walk(dir string) error {
 	f, _ := os.Open(dir)
-	//defer f.Close()
 	defer wg.Done()
+	atomic.AddUint64(&dirCount, 1)
 
 	list, err := f.ReadDir(0)
 	f.Close()
@@ -56,8 +53,8 @@ func walk(dir string) error {
 	}
 
 	var (
-		size int64
-		info fs.FileInfo
+		listSize int64
+		info     fs.FileInfo
 	)
 
 	for _, v := range list {
@@ -67,13 +64,26 @@ func walk(dir string) error {
 		if info == nil {
 			continue
 		}
-		size = info.Size()
+		listSize = info.Size()
 
-		fmt.Printf("%v - %v - %v; path: %v\n", v.Name(), v.IsDir(), size, dir+"\\"+v.Name())
+		//fmt.Printf("%v - %v - %v; path: %v\n", v.Name(), v.IsDir(), listSize, dir+"\\"+v.Name())
 
 		if v.IsDir() {
+			//dir
 			wg.Add(1)
 			go walk(dir + "\\" + v.Name())
+		} else {
+			// file
+			<-ch
+
+			if itemSize, ok := items[v.Name()]; ok {
+				if itemSize == uint64(listSize) {
+					duplicates = append(duplicates, dir+"\\"+v.Name())
+				}
+			}
+			items[v.Name()] = uint64(listSize)
+
+			ch <- struct{}{}
 		}
 	}
 
@@ -81,6 +91,7 @@ func walk(dir string) error {
 }
 
 func main() {
+
 	dir := flag.String("dir", "", "A directory to process")
 	removeDup := flag.Bool("rem", false, "True value is about to remove duplicate files")
 	flag.Parse()
@@ -110,7 +121,8 @@ func main() {
 		}
 	}
 
-	*dir = "C:\\gb\\go2\\test"
+	//*dir = "C:\\gb\\go2\\test"
+	//*dir = "C:\\Users\\sakharov\\go\\src\\go2\\test"
 
 	fmt.Println("dir: ", *dir)
 
@@ -118,11 +130,34 @@ func main() {
 
 	items = make(map[string]uint64)
 	wg = sync.WaitGroup{}
+	ch = make(chan struct{}, 1)
 
 	wg.Add(1)
+
 	go walk(*dir)
 
+	//fmt.Println("ch to send")
+	ch <- struct{}{}
+	//fmt.Println("ch sent")
+
 	wg.Wait()
+
+	fmt.Println("--- duplicates:")
+	for _, s := range duplicates {
+		fmt.Println(s)
+	}
+
+	// fmt.Println("--- items:")
+	// for v, i := range items {
+	// 	fmt.Printf("%v - %v\n", v, i)
+	// }
+
+	fmt.Println("dirCount: ", dirCount)
+
+	// go func() {
+	// 	<-ch
+	// }()
+	// ch <- struct{}{}
 
 	// err := filepath.Walk(*dir, func(path string, info os.FileInfo, err error) error {
 	// 	fmt.Printf("%v - %v - %v\n", path, info.IsDir(), info.Size())
