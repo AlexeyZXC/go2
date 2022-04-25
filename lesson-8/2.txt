@@ -1,0 +1,277 @@
+file: c:\_test\go1\go.txt - 565
+file: c:\_test\go1\8\conf.yaml - 221
+file: c:\_test\go1\8\yamlConfig.zip - 714
+file: c:\_test\go1\backup\go1\.gitignore - 284
+file: c:\_test\go1\go1\.gitignore - 284
+file: c:\_test\go1\backup\go1\go.mod - 20
+file: c:\_test\go1\boris\gb\.gitignore - 5
+file: c:\_test\go1\backup\go1\.git\COMMIT_EDITMSG - 9
+file: c:\_test\go1\backup\go1\.vscode\launch.json - 503        
+file: c:\_test\go1\go1\.git\COMMIT_EDITMSG - 17
+file: c:\_test\go1\boris\gb\.git\config - 298
+file: c:\_test\go1\go1\config.yaml - 52
+file: c:\_test\go1\backup\go1\main.exe - 2087936
+file: c:\_test\go1\go1\.vscode\launch.json - 503
+file: c:\_test\go1\boris\gb\go.mod - 22
+file: c:\_test\go1\backup\go1\.git\config - 295
+file: c:\_test\go1\backup\go1\internal\player\player.go - 1057 
+file: c:\_test\go1\backup\go1\internal\console\console.go - 257
+file: c:\_test\go1\boris\gb\cmd\lesson5\main.go - 4755
+file: c:\_test\go1\backup\go1\internal\gamefield\gamefield.go - 1896
+file: c:\_test\go1\backup\go1\internal\interfaces\interfaces.go - 260
+file: c:\_test\go1\boris\gb\cmd\lesson1\main.go - 179
+file: c:\_test\go1\backup\go1\internal\logic\logic.go - 1292
+file: c:\_test\go1\boris\gb\cmd\lesson3\main.go - 876
+file: c:\_test\go1\boris\gb\cmd\lesson4\main.go - 1338
+file: c:\_test\go1\go1\.git\config - 361
+file: c:\_test\go1\boris\gb\cmd\lesson2\calculator.go - 814
+file: c:\_test\go1\boris\gb\.git\description - 73
+file: c:\_test\go1\go1\go.mod - 82
+file: c:\_test\go1\backup\go1\main.go - 1839
+file: c:\_test\go1\boris\gb\main.exe - 2082816
+file: c:\_test\go1\backup\go1\.git\description - 73
+file: c:\_test\go1\boris\gb\internal\gamefield\gamefield.go - 522
+file: c:\_test\go1\boris\gb\internal\player\player.go - 969
+file: c:\_test\go1\boris\gb\internal\mymath\abs.go - 205
+file: c:\_test\go1\go1\.git\description - 73
+file: c:\_test\go1\boris\gb\.git\FETCH_HEAD - 97
+file: c:\_test\go1\go1\go.sum - 262
+file: c:\_test\go1\boris\gb\README.md - 4
+file: c:\_test\go1\backup\go1\.git\FETCH_HEAD - 92
+file: c:\_test\go1\boris\gb\internal\mymath\max.go - 86
+file: c:\_test\go1\go1\.git\FETCH_HEAD - 300
+file: c:\_test\go1\boris\gb\.git\HEAD - 23
+file: c:\_test\go1\go1\main.exe - 2087936
+file: c:\_test\go1\go1\internal\configHelper\configHelper.go - 1439
+file: c:\_test\go1\go1\internal\gamefield\gamefield.go - 1922
+file: c:\_test\go1\go1\internal\player\player.go - 1057
+file: c:\_test\go1\go1\internal\interfaces\interfaces.go - 260
+file: c:\_test\go1\go1\internal\console\console.go - 1827
+file: c:\_test\go1\backup\go1\.git\HEAD - 21
+file: c:\_test\go1\go1\internal\logic\logic.go - 1292
+file: c:\_test\go1\boris\gb\internal\mymath\min.go - 84
+file: c:\_test\go1\go1\.git\HEAD - 21
+file: c:\_test\go1\boris\gb\.git\index - 1426
+file: c:\_test\go1\boris\gb\.git\hooks\README.sample - 177
+file: c:\_test\go1\go1\main.go - 3123
+file: c:\_test\go1\backup\go1\.git\index - 787
+file: c:\_test\go1\backup\go1\.git\hooks\README.sample - 177
+file: c:\_test\go1\go1\.git\index - 1538
+file: c:\_test\go1\go1\.git\hooks\README.sample - 177
+file: c:\_test\go1\boris\gb\.git\info\exclude - 113
+file: c:\_test\go1\boris\gb\.git\logs\HEAD - 362
+file: c:\_test\go1\boris\gb\.git\refs\remotes\origin\HEAD - 32
+file: c:\_test\go1\boris\gb\.git\refs\heads\master - 41
+file: c:\_test\go1\boris\gb\.git\objects\47\c0fe0c555893b967697cd98eadede3a978a1f1 - 181
+file: c:\_test\go1\boris\gb\.git\objects\6f\f5c292a8032d9039dba58e3b8222761e167ede - 1234165
+file: c:\_test\go1\boris\gb\.git\objects\9a\2e00d34b892766c1640a233f9bfecb88d94022 - 212
+file: c:\_test\go1\boris\gb\.git\objects\b1\073307726f6d73e8f50c6bc4db74bb8ea6d274 - 230
+file: c:\_test\go1\go1\main_test.go - 1278
+file: c:\_test\go1\boris\gb\.git\objects\pack\pack-b82558462f00b55de4ff2adb93435c34b68e8811.idx - 2024
+file: c:\_test\go1\backup\go1\.git\ORIG_HEAD - 41
+file: c:\_test\go1\backup\go1\.git\info\exclude - 113
+file: c:\_test\go1\backup\go1\.git\logs\HEAD - 952
+file: c:\_test\go1\backup\go1\.git\objects\2a\cad87202784b94bc33a6dcd66307cf3b6be4b9 - 183
+file: c:\_test\go1\backup\go1\.git\objects\pack\pack-84d344d4c05b3368d3c037cc03c8ebd53c6f10d7.idx - 1156
+file: c:\_test\go1\backup\go1\.git\objects\17\d8eb78fbef566f7adb007528a7dca20ba64c44 - 174
+file: c:\_test\go1\backup\go1\.git\objects\1e\01735f63672898d3b229ae61b73fa6026bec57 - 356
+file: c:\_test\go1\backup\go1\.git\objects\2e\4f7b4f1c8ce169f7da27706aa466e1743e80ea - 81
+file: c:\_test\go1\backup\go1\.git\objects\22\67596d5026a42847a268c4817b179f36a0d5e9 - 175
+file: c:\_test\go1\backup\go1\.git\objects\84\e81ea395ba0fcc1da01102793fb8a6f4853058 - 435
+file: c:\_test\go1\backup\go1\.git\objects\34\d8b0279859efa4d3d89feb4dd1d6825d41d989 - 296
+file: c:\_test\go1\go1\.git\ORIG_HEAD - 41
+file: c:\_test\go1\backup\go1\.git\objects\40\9f5de35843b947f5925c2adeb583842b9a40d2 - 441
+file: c:\_test\go1\backup\go1\.git\objects\a2\e22a251f087a961aa48d684bac71d32aee3efb - 159
+file: c:\_test\go1\backup\go1\.git\objects\af\abb1c900d2bb7904ee7b25939f235d75a448d5 - 431
+file: c:\_test\go1\backup\go1\.git\objects\43\c20926f15c33ea034d6a4142423ea38e2ff819 - 54
+file: c:\_test\go1\backup\go1\.git\objects\b7\dec972a8c58011a1f18d63748822bde83e0597 - 151
+file: c:\_test\go1\backup\go1\.git\objects\51\61d3e5632c172c6b1a3ed1aac2e6a6eca15c32 - 87
+file: c:\_test\go1\backup\go1\.git\objects\c6\067b6fe216fe96eaa7bae14806cc5a68aae9f8 - 57
+file: c:\_test\go1\backup\go1\.git\objects\55\a9a5b25247e578a205828014e6e9110ee9073b - 598
+file: c:\_test\go1\backup\go1\.git\objects\d3\3780329727ca7db99261add94f9bccd4a01296 - 162
+file: c:\_test\go1\backup\go1\.git\objects\5c\9cec28e22762ed0447a0cb0c5103ff0ef6c8eb - 182
+file: c:\_test\go1\backup\go1\.git\objects\d7\49833ca8ae432812d17af67aa16b5ceee1d522 - 117
+file: c:\_test\go1\backup\go1\.git\objects\5d\71be432b1d7b118cadda1a84543af3de843536 - 56
+file: c:\_test\go1\go1\.git\objects\pack\pack-84d344d4c05b3368d3c037cc03c8ebd53c6f10d7.idx - 1156
+file: c:\_test\go1\backup\go1\.git\objects\d9\0eb09b6421dfd44dde250835d8a8490c15d275 - 493
+file: c:\_test\go1\backup\go1\.git\objects\62\23726c180ce95fef06021f78c459604c009b0f - 164
+file: c:\_test\go1\backup\go1\.git\objects\69\261ea665397be74e2974125062679c12e409f8 - 82
+file: c:\_test\go1\backup\go1\.git\objects\70\60b14d8d32f34bc0bdb772f5a7a6a975dcb2d8 - 36
+file: c:\_test\go1\backup\go1\.git\objects\79\5cc326ab2f06601bed32c129633c1f22cdd3d5 - 54
+file: c:\_test\go1\backup\go1\.git\objects\ef\a226762cdccd6e75757281c7b88350c430b28d - 81
+file: c:\_test\go1\backup\go1\.git\objects\7c\55ea6bd2ca31d5fe8c0793b5a14bf38946497f - 182
+file: c:\_test\go1\backup\go1\.git\objects\7f\b68a7e20b6e061e7b3e2f541b69a3dede7c833 - 57
+file: c:\_test\go1\backup\go1\.git\objects\eb\e418dfe67625216ff40498c0ccac022fcec77e - 292
+file: c:\_test\go1\go1\.git\objects\79\5cc326ab2f06601bed32c129633c1f22cdd3d5 - 54
+file: c:\_test\go1\go1\.git\objects\34\d8b0279859efa4d3d89feb4dd1d6825d41d989 - 296
+file: c:\_test\go1\go1\.git\info\exclude - 113
+file: c:\_test\go1\go1\.git\objects\36\54d5eb3b1112ffe2ec1bc1f221e1e3c74bf143 - 60
+file: c:\_test\go1\go1\.git\logs\HEAD - 3014
+file: c:\_test\go1\go1\.git\objects\37\607e20f4e0e7321b5f68918e45dd5efd846bd6 - 208
+file: c:\_test\go1\go1\.git\objects\04\47444c5de16fabf903e1e37b5517a2b3a8b0d7 - 753
+file: c:\_test\go1\go1\.git\objects\05\f551520bc50980c8fbfdb293b52b48f8cc3f6e - 615
+file: c:\_test\go1\go1\.git\objects\3e\1a1fbcfadc879621fb50c8e64f586829cdb467 - 58
+file: c:\_test\go1\go1\.git\objects\07\befb51425066f1dbf5ee3f2ddd3a2b2a05ca8b - 182
+file: c:\_test\go1\go1\.git\objects\40\9f5de35843b947f5925c2adeb583842b9a40d2 - 441
+file: c:\_test\go1\go1\.git\objects\41\1947b4ddb93b38c563d373e0792c7ba748389f - 60
+file: c:\_test\go1\go1\.git\objects\0b\f8631f0fdbdf8202230ce7291ab4350cf61985 - 474
+file: c:\_test\go1\go1\.git\objects\42\904c9431c980ac5b28c0659ffa8a3c54d2ccbe - 183
+file: c:\_test\go1\go1\.git\objects\10\ac8e1269385d7f8f0566998c7a88937638213f - 52
+file: c:\_test\go1\backup\go1\.git\objects\e3\b27915f1c612c57391120d3992cfc67a3041c2 - 298
+file: c:\_test\go1\go1\.git\objects\43\c20926f15c33ea034d6a4142423ea38e2ff819 - 54
+file: c:\_test\go1\go1\.git\objects\13\d13ba6fa54f489c681113eb6973b2098caa447 - 67
+file: c:\_test\go1\backup\go1\.git\objects\f4\37c56db0bd1d31af3d83011bf552de79e2bb2a - 554
+file: c:\_test\go1\go1\.git\objects\47\f6b8e533601fb3fe00655e8e5a7dcade10f27f - 177
+file: c:\_test\go1\go1\.git\objects\14\e2e1db1c55aab42a4963f8ca497a8ebe66758c - 55
+file: c:\_test\go1\go1\.git\objects\4a\2174189edde34044b04a53d4febf171fa101cf - 167
+file: c:\_test\go1\go1\.git\objects\16\0343ec39bd8ec21ce7384ab30b3e65bf5960b3 - 409
+file: c:\_test\go1\go1\.git\objects\ba\e2d372d23ede5ed979e6016f8edd8006ff3e61 - 1081
+file: c:\_test\go1\go1\.git\objects\51\61d3e5632c172c6b1a3ed1aac2e6a6eca15c32 - 87
+file: c:\_test\go1\go1\.git\objects\17\d8eb78fbef566f7adb007528a7dca20ba64c44 - 174
+file: c:\_test\go1\go1\.git\objects\53\dced62ba5b71a263f8cd4aedbdff016208bab8 - 967
+file: c:\_test\go1\go1\.git\objects\7c\55ea6bd2ca31d5fe8c0793b5a14bf38946497f - 182
+file: c:\_test\go1\go1\.git\objects\1e\01735f63672898d3b229ae61b73fa6026bec57 - 356
+file: c:\_test\go1\go1\.git\objects\55\a9a5b25247e578a205828014e6e9110ee9073b - 598
+file: c:\_test\go1\go1\.git\objects\7f\b68a7e20b6e061e7b3e2f541b69a3dede7c833 - 57
+file: c:\_test\go1\go1\.git\objects\20\0ff4fc75113a2553cb90829122bbddf65338a5 - 176
+file: c:\_test\go1\go1\.git\objects\84\e81ea395ba0fcc1da01102793fb8a6f4853058 - 435
+file: c:\_test\go1\go1\.git\objects\56\3d71d07121be6a470d740b49f015e182c5b6e0 - 275
+file: c:\_test\go1\go1\.git\objects\22\67596d5026a42847a268c4817b179f36a0d5e9 - 175
+file: c:\_test\go1\go1\.git\objects\89\8ffecf024ec4d90a16cefb2fa37c439389ab1d - 117
+file: c:\_test\go1\go1\.git\objects\5c\9cec28e22762ed0447a0cb0c5103ff0ef6c8eb - 182
+file: c:\_test\go1\go1\.git\objects\23\758c6b69ebd62444dc428a0f190884b23ce067 - 209
+file: c:\_test\go1\go1\.git\objects\93\09f3e39fe274303cf91a604cd199103f3bc941 - 182
+file: c:\_test\go1\go1\.git\objects\5d\71be432b1d7b118cadda1a84543af3de843536 - 56
+file: c:\_test\go1\go1\.git\objects\25\d2329d220d9c0dd4db186ac6a18386485dfbbf - 1072
+file: c:\_test\go1\go1\.git\objects\94\3486f66e0fbd33d9c32ffd7b29d5ed8d3423df - 67
+file: c:\_test\go1\go1\.git\objects\98\59f386f5e391e61e00d55e416a5fc883fed7e0 - 160
+file: c:\_test\go1\go1\.git\objects\2a\cad87202784b94bc33a6dcd66307cf3b6be4b9 - 183
+file: c:\_test\go1\go1\.git\objects\2b\141305f815d19cb9cc97af03da935ac3259753 - 208
+file: c:\_test\go1\go1\.git\objects\99\92b66078e1b0a9140190cedbc9df0e535f9773 - 245
+file: c:\_test\go1\go1\.git\objects\2e\4f7b4f1c8ce169f7da27706aa466e1743e80ea - 81
+file: c:\_test\go1\go1\.git\objects\9e\637c2a728c725559353e20c9f5f27dcaaca25d - 168
+file: c:\_test\go1\go1\.git\objects\32\d8cc996ce67a1f516a3f5454d530d9b1f7dc36 - 177
+file: c:\_test\go1\go1\.git\objects\62\23726c180ce95fef06021f78c459604c009b0f - 164
+file: c:\_test\go1\go1\.git\objects\a0\ecd8aa4be0f5dfd52921867a164c6a4e9c59d2 - 386
+file: c:\_test\go1\go1\.git\objects\69\261ea665397be74e2974125062679c12e409f8 - 82
+file: c:\_test\go1\go1\.git\objects\af\abb1c900d2bb7904ee7b25939f235d75a448d5 - 431
+file: c:\_test\go1\go1\.git\objects\6c\9038e6c1bbf59c123ebbf3353e231705d9d025 - 275
+file: c:\_test\go1\go1\.git\objects\b1\85bece16f9080c14e517838de582c42bd20aa0 - 223
+file: c:\_test\go1\go1\.git\objects\70\60b14d8d32f34bc0bdb772f5a7a6a975dcb2d8 - 36
+file: c:\_test\go1\go1\.git\objects\b5\c09cbf0b83601dcfaff9acb60a9b990dd6b3c2 - 676
+file: c:\_test\go1\go1\.git\objects\75\346616b19bda7882ecbba954fe5bc1e5577468 - 222
+file: c:\_test\go1\go1\.git\objects\b7\dec972a8c58011a1f18d63748822bde83e0597 - 151
+file: c:\_test\go1\go1\.git\objects\a4\f2190e850865750493a58d17a863f3e5754ef3 - 866
+file: c:\_test\go1\go1\.git\objects\b8\4ddbd91b1ae4bbe9b2f6edba8d33466bc4b197 - 781
+file: c:\_test\go1\go1\.git\objects\a2\e22a251f087a961aa48d684bac71d32aee3efb - 159
+file: c:\_test\go1\go1\.git\objects\a5\9aa657b344d7162257aaee0f0b0c0f46ccddca - 178
+file: c:\_test\go1\go1\.git\objects\a6\87e35f3e77f2014efc937a481a337520c70faa - 613
+file: c:\_test\go1\go1\.git\objects\f0\b2a145d494de37ae30f852a5d82da7a1f4398e - 55
+file: c:\_test\go1\go1\.git\objects\e4\58b6030b52266f53406307298841a4d7951e78 - 727
+file: c:\_test\go1\go1\.git\objects\e5\1fb9844e8eb25358a0193b36473472c08e7b49 - 536
+file: c:\_test\go1\go1\.git\objects\eb\e418dfe67625216ff40498c0ccac022fcec77e - 292
+file: c:\_test\go1\go1\.git\objects\c0\5f12eb11955d46a335c0d005b4bd3348ae5aac - 607
+file: c:\_test\go1\go1\.git\objects\ed\bc1bf25e4d4fb9be7963ba32267fd16842ba43 - 56
+file: c:\_test\go1\go1\.git\objects\ad\45d136773e593e20e7348d669fac36cb8aeeca - 60
+file: c:\_test\go1\go1\.git\objects\c2\61c46e46cfc9c2019f6c17e85e19a28973b05c - 53
+file: c:\_test\go1\go1\.git\objects\ef\a226762cdccd6e75757281c7b88350c430b28d - 81
+file: c:\_test\go1\go1\.git\objects\fb\b80ab71d760102cf3141138a5ac4c936459813 - 209
+file: c:\_test\go1\go1\.git\objects\f3\bccc1eec9e0a6173e9ac4612249cd0e2af8b9a - 57
+file: c:\_test\go1\go1\.git\objects\f4\37c56db0bd1d31af3d83011bf552de79e2bb2a - 554
+file: c:\_test\go1\go1\.git\objects\c3\862e13353dc7656530a2d187f7c3706ca4da6c - 626
+file: c:\_test\go1\go1\.git\objects\c6\067b6fe216fe96eaa7bae14806cc5a68aae9f8 - 57
+file: c:\_test\go1\go1\.git\objects\d3\3780329727ca7db99261add94f9bccd4a01296 - 162
+file: c:\_test\go1\go1\.git\objects\dc\6ab19c1366485fc63c65d5a7ef9df8652b4403 - 411
+file: c:\_test\go1\go1\.git\objects\e3\b27915f1c612c57391120d3992cfc67a3041c2 - 298
+file: c:\_test\go1\go1\.git\objects\d9\0eb09b6421dfd44dde250835d8a8490c15d275 - 493
+file: c:\_test\go1\go1\.git\objects\fc\c6f51304154c8b001ee205200dad31554f721f - 274
+file: c:\_test\go1\go1\.git\objects\d7\49833ca8ae432812d17af67aa16b5ceee1d522 - 117
+file: c:\_test\go1\boris\gb\.git\logs\refs\stash - 0
+file: c:\_test\go1\boris\gb\.git\refs\remotes\origin\master - 41
+file: c:\_test\go1\boris\gb\.git\logs\refs\remotes\origin\master - 336
+file: c:\_test\go1\boris\gb\.git\logs\refs\heads\master - 362
+file: c:\_test\go1\boris\gb\.git\objects\pack\pack-b82558462f00b55de4ff2adb93435c34b68e8811.pack - 3951
+file: c:\_test\go1\backup\go1\.git\refs\heads\main - 41
+file: c:\_test\go1\backup\go1\.git\logs\refs\remotes\origin\main - 934
+file: c:\_test\go1\backup\go1\.git\refs\remotes\origin\HEAD - 30
+file: c:\_test\go1\backup\go1\.git\logs\refs\heads\main - 964
+file: c:\_test\go1\backup\go1\.git\objects\pack\pack-84d344d4c05b3368d3c037cc03c8ebd53c6f10d7.pack - 797
+file: c:\_test\go1\go1\.git\refs\heads\lesson_7 - 41
+file: c:\_test\go1\go1\.git\refs\tags\v2.0.0 - 41
+file: c:\_test\go1\go1\.git\refs\remotes\origin\HEAD - 30
+file: c:\_test\go1\go1\.git\objects\pack\pack-84d344d4c05b3368d3c037cc03c8ebd53c6f10d7.pack - 797
+file: c:\_test\go1\backup\go1\.git\objects\d9\eb445d0a7f0a8436fa57fc0566d8e551931a44 - 162
+file: c:\_test\go1\backup\go1\.git\objects\79\ae5050d5e964becdfe3da29003003c5f7b36b3 - 569
+file: c:\_test\go1\go1\.git\objects\79\ae5050d5e964becdfe3da29003003c5f7b36b3 - 569
+file: c:\_test\go1\go1\.git\logs\refs\remotes\origin\lesson_7 - 150
+file: c:\_test\go1\go1\.git\logs\refs\heads\lesson_7 - 321
+file: c:\_test\go1\go1\.git\objects\10\c5b14fca42ad5168566bff84ef92f24f675043 - 169
+file: c:\_test\go1\go1\.git\objects\5d\a0a344dfdd2333f2abea3e9f06e80d7af44cd5 - 183
+file: c:\_test\go1\go1\.git\objects\2e\e26aef74fc7a68c17cd868cb83107926ca4bcb - 91
+file: c:\_test\go1\go1\.git\objects\62\828d688c929e643d3211d2ed6edefaee9bd7af - 168
+file: c:\_test\go1\go1\.git\objects\75\f38d0d2fa0a4d2eedfbd3c7a39d5e781ae344d - 645
+file: c:\_test\go1\go1\.git\objects\e5\2d7b10efa2894b05a75a09f4df8ac160c57b94 - 275
+file: c:\_test\go1\go1\.git\objects\d3\90198c26f303e216d231d89dbb6f084ad04beb - 624
+file: c:\_test\go1\go1\.git\objects\d9\263620e31d3e867167c7c1a1639a4aebba0857 - 614
+file: c:\_test\go1\boris\gb\.git\objects\pack\pack-eed73583438e7f9b22aad6c3693956f3fcca9097.idx - 1492
+file: c:\_test\go1\backup\go1\.git\refs\remotes\origin\main - 41
+file: c:\_test\go1\go1\.git\refs\heads\main - 41
+file: c:\_test\go1\go1\.git\refs\tags\v2.0.1 - 41
+file: c:\_test\go1\go1\.git\refs\remotes\origin\lesson_7 - 41
+file: c:\_test\go1\go1\.git\logs\refs\remotes\origin\main - 1730
+file: c:\_test\go1\go1\.git\logs\refs\heads\main - 1822
+file: c:\_test\go1\go1\.git\objects\d3\90471f683c8c9512566fe3bf4c544399ea99ea - 148
+file: c:\_test\go1\go1\.git\objects\d9\eb445d0a7f0a8436fa57fc0566d8e551931a44 - 162
+file: c:\_test\go1\boris\gb\.git\objects\pack\pack-eed73583438e7f9b22aad6c3693956f3fcca9097.pack - 3365
+file: c:\_test\go1\go1\.git\refs\remotes\origin\main - 41
+--- duplicates(len= 49):
+c:\_test\go1\go1\.gitignore
+c:\_test\go1\go1\.vscode\launch.json
+c:\_test\go1\backup\go1\.git\description
+c:\_test\go1\go1\.git\description
+c:\_test\go1\go1\internal\interfaces\interfaces.go
+c:\_test\go1\go1\internal\logic\logic.go
+c:\_test\go1\go1\.git\HEAD
+c:\_test\go1\backup\go1\.git\hooks\README.sample
+c:\_test\go1\go1\.git\hooks\README.sample
+c:\_test\go1\backup\go1\.git\info\exclude
+c:\_test\go1\go1\.git\ORIG_HEAD
+c:\_test\go1\go1\.git\objects\pack\pack-84d344d4c05b3368d3c037cc03c8ebd53c6f10d7.idx
+c:\_test\go1\go1\.git\objects\79\5cc326ab2f06601bed32c129633c1f22cdd3d5
+c:\_test\go1\go1\.git\objects\34\d8b0279859efa4d3d89feb4dd1d6825d41d989
+c:\_test\go1\go1\.git\info\exclude
+c:\_test\go1\go1\.git\objects\40\9f5de35843b947f5925c2adeb583842b9a40d2
+c:\_test\go1\go1\.git\objects\43\c20926f15c33ea034d6a4142423ea38e2ff819
+c:\_test\go1\go1\.git\objects\51\61d3e5632c172c6b1a3ed1aac2e6a6eca15c32
+c:\_test\go1\go1\.git\objects\17\d8eb78fbef566f7adb007528a7dca20ba64c44
+c:\_test\go1\go1\.git\objects\7c\55ea6bd2ca31d5fe8c0793b5a14bf38946497f
+c:\_test\go1\go1\.git\objects\1e\01735f63672898d3b229ae61b73fa6026bec57
+c:\_test\go1\go1\.git\objects\55\a9a5b25247e578a205828014e6e9110ee9073b
+c:\_test\go1\go1\.git\objects\7f\b68a7e20b6e061e7b3e2f541b69a3dede7c833
+c:\_test\go1\go1\.git\objects\84\e81ea395ba0fcc1da01102793fb8a6f4853058
+c:\_test\go1\go1\.git\objects\22\67596d5026a42847a268c4817b179f36a0d5e9
+c:\_test\go1\go1\.git\objects\5c\9cec28e22762ed0447a0cb0c5103ff0ef6c8eb
+c:\_test\go1\go1\.git\objects\5d\71be432b1d7b118cadda1a84543af3de843536
+c:\_test\go1\go1\.git\objects\2a\cad87202784b94bc33a6dcd66307cf3b6be4b9
+c:\_test\go1\go1\.git\objects\2e\4f7b4f1c8ce169f7da27706aa466e1743e80ea
+c:\_test\go1\go1\.git\objects\62\23726c180ce95fef06021f78c459604c009b0f
+c:\_test\go1\go1\.git\objects\69\261ea665397be74e2974125062679c12e409f8
+c:\_test\go1\go1\.git\objects\af\abb1c900d2bb7904ee7b25939f235d75a448d5
+c:\_test\go1\go1\.git\objects\70\60b14d8d32f34bc0bdb772f5a7a6a975dcb2d8
+c:\_test\go1\go1\.git\objects\b7\dec972a8c58011a1f18d63748822bde83e0597
+c:\_test\go1\go1\.git\objects\a2\e22a251f087a961aa48d684bac71d32aee3efb
+c:\_test\go1\go1\.git\objects\eb\e418dfe67625216ff40498c0ccac022fcec77e
+c:\_test\go1\go1\.git\objects\ef\a226762cdccd6e75757281c7b88350c430b28d
+c:\_test\go1\go1\.git\objects\f4\37c56db0bd1d31af3d83011bf552de79e2bb2a
+c:\_test\go1\go1\.git\objects\c6\067b6fe216fe96eaa7bae14806cc5a68aae9f8
+c:\_test\go1\go1\.git\objects\d3\3780329727ca7db99261add94f9bccd4a01296
+c:\_test\go1\go1\.git\objects\e3\b27915f1c612c57391120d3992cfc67a3041c2
+c:\_test\go1\go1\.git\objects\d9\0eb09b6421dfd44dde250835d8a8490c15d275
+c:\_test\go1\go1\.git\objects\d7\49833ca8ae432812d17af67aa16b5ceee1d522
+c:\_test\go1\boris\gb\.git\refs\remotes\origin\master
+c:\_test\go1\go1\.git\refs\remotes\origin\HEAD
+c:\_test\go1\go1\.git\objects\pack\pack-84d344d4c05b3368d3c037cc03c8ebd53c6f10d7.pack
+c:\_test\go1\go1\.git\objects\79\ae5050d5e964becdfe3da29003003c5f7b36b3
+c:\_test\go1\go1\.git\refs\heads\main
+c:\_test\go1\go1\.git\objects\d9\eb445d0a7f0a8436fa57fc0566d8e551931a44
+dirCount: 195; filesCount: 226; duplicate files: 49

@@ -3,10 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
-	"io/fs"
+	dupremover "go2/dupRemover"
 	"os"
-	"sync"
-	"sync/atomic"
+	"strings"
 )
 
 // Практическое задание
@@ -33,70 +32,21 @@ import (
 // 6. Программа должна уведомлять пользователя об ошибках, возникающих во время
 // выполнения
 
-var (
-	duplicates []string
-	items      map[string]uint64 // path and size
-	wg         sync.WaitGroup
-	ch         chan struct{}
-	dirCount   uint64
-)
-
-func walk(dir string) error {
-	f, _ := os.Open(dir)
-	defer wg.Done()
-	atomic.AddUint64(&dirCount, 1)
-
-	list, err := f.ReadDir(0)
-	f.Close()
-	if err != nil {
-		return err
-	}
-
-	var (
-		listSize int64
-		info     fs.FileInfo
-	)
-
-	for _, v := range list {
-		if info, err = v.Info(); err != nil {
-			fmt.Println("Error on info: ", err)
-		}
-		if info == nil {
-			continue
-		}
-		listSize = info.Size()
-
-		//fmt.Printf("%v - %v - %v; path: %v\n", v.Name(), v.IsDir(), listSize, dir+"\\"+v.Name())
-
-		if v.IsDir() {
-			//dir
-			wg.Add(1)
-			go walk(dir + "\\" + v.Name())
-		} else {
-			// file
-			<-ch
-
-			if itemSize, ok := items[v.Name()]; ok {
-				if itemSize == uint64(listSize) {
-					duplicates = append(duplicates, dir+"\\"+v.Name())
-				}
-			}
-			items[v.Name()] = uint64(listSize)
-
-			ch <- struct{}{}
-		}
-	}
-
-	return nil
-}
-
 func main() {
 
 	dir := flag.String("dir", "", "A directory to process")
 	removeDup := flag.Bool("rem", false, "True value is about to remove duplicate files")
+	h := flag.Bool("h", false, "To unveil the help")
+	help := flag.Bool("help", false, "To unveil the help")
 	flag.Parse()
 
-	fmt.Println("removeDup: ", *removeDup)
+	*help = *help || *h
+	if *help {
+		fmt.Printf("The tool finds and deletes the duplicates of files within the path passed in -dir argument.\n %v",
+			"Duplicates of files are the files with the same name and size.\n Arguments: \n-dir(string)  directory to process. \n-rem(bool) remove duplicate files or do "+
+				"not.\n Example: For removing duplicate files located in c:\\test provide the command: main.exe -dir=c:\\test -rem=true")
+		return
+	}
 
 	defer func() {
 		if err := recover(); err != nil {
@@ -121,57 +71,46 @@ func main() {
 		}
 	}
 
-	//*dir = "C:\\gb\\go2\\test"
+	*dir = "C:\\gb\\go2\\test"
 	//*dir = "C:\\Users\\sakharov\\go\\src\\go2\\test"
+	//*dir = "c:\\_test\\go1"
 
 	fmt.Println("dir: ", *dir)
 
 	// arguments ok now
 
-	items = make(map[string]uint64)
-	wg = sync.WaitGroup{}
-	ch = make(chan struct{}, 1)
+	remover := dupremover.New(*dir)
 
-	wg.Add(1)
-
-	go walk(*dir)
-
-	//fmt.Println("ch to send")
-	ch <- struct{}{}
-	//fmt.Println("ch sent")
-
-	wg.Wait()
-
-	fmt.Println("--- duplicates:")
-	for _, s := range duplicates {
-		fmt.Println(s)
+	dups, err := remover.Process(*dir)
+	if len(dups) == 0 {
+		fmt.Println("No duplicates found")
+		return
+	}
+	fmt.Println("Duplicates files:")
+	for _, v := range dups {
+		fmt.Println(v)
 	}
 
-	// fmt.Println("--- items:")
-	// for v, i := range items {
-	// 	fmt.Printf("%v - %v\n", v, i)
-	// }
-
-	fmt.Println("dirCount: ", dirCount)
-
-	// go func() {
-	// 	<-ch
-	// }()
-	// ch <- struct{}{}
-
-	// err := filepath.Walk(*dir, func(path string, info os.FileInfo, err error) error {
-	// 	fmt.Printf("%v - %v - %v\n", path, info.IsDir(), info.Size())
-	// 	if v, ok := items[path]; ok {
-	// 		if v == uint64(info.Size()) {
-	// 			duplicates = append(duplicates, path)
-	// 			return nil
-	// 		}
-	// 	}
-	// 	items[path] = uint64(info.Size())
-	// 	return nil
-	// })
-	// if err != nil {
-	// 	panic(err)
-	// }
-
+	if err != nil {
+		fmt.Println("Process error: ", err)
+	}
+	if *removeDup {
+		var resp string = "no"
+		fmt.Println("Do you want to remove the duplicate files?. No or yes?")
+		fmt.Scan(&resp)
+		resp = strings.ToLower(resp)
+		fmt.Println("." + resp + ".")
+		if resp == "yes" {
+			errs := remover.Remove()
+			if len(errs) > 0 {
+				fmt.Println("Errors:")
+				for _, v := range errs {
+					fmt.Println(v)
+				}
+			}
+			fmt.Println("Done.")
+		}
+	}
+	//dupremover.Remove()
+	fmt.Printf("Duplicate files: %v ", len(dups))
 }
