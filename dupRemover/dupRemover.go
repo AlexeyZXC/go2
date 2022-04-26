@@ -1,3 +1,4 @@
+// Dupremover package implements functionality of finding and removing the file duplicates.
 package dupremover
 
 import (
@@ -19,11 +20,14 @@ type data struct {
 	dir        string
 }
 
+// New gets the directory to process in dir argument.
+// Returns a new struct for dupRemover.
 func New(dir string) data {
-	return data{}
+	return data{dir: dir}
 }
 
-func (d *data) Process(dir string) ([]string, error) {
+// Process finds the file duplicates within directory and slice of strings containing the full paths to the duplicate files as first parameter. The second parameter is error.
+func (d *data) Process() ([]string, error) {
 
 	d.items = make(map[string]int64)
 	d.wg = sync.WaitGroup{}
@@ -32,7 +36,7 @@ func (d *data) Process(dir string) ([]string, error) {
 	var err error
 
 	d.wg.Add(1)
-	go d.walk(dir, err)
+	go d.walk(d.dir, err)
 	d.ch <- struct{}{}
 
 	d.wg.Wait()
@@ -40,6 +44,7 @@ func (d *data) Process(dir string) ([]string, error) {
 	return d.duplicates, err
 }
 
+// Remove removes the found duplicate files and returns slice of errors if they exist.
 func (d *data) Remove() (errs []error) {
 	for _, v := range d.duplicates {
 		if err := os.Remove(v); err != nil {

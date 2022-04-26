@@ -1,12 +1,6 @@
+// Programme finds the file duplicates within the directory passed in -dir argument. The list of the found duplicate files is printed out to stdout.
+// The duplicate files can be removed by specifying the -rem flag.
 package main
-
-import (
-	"flag"
-	"fmt"
-	dupremover "go2/dupRemover"
-	"os"
-	"strings"
-)
 
 // Практическое задание
 // В качестве завершающего задания нужно выполнить программу поиска дубликатов файлов.
@@ -31,6 +25,14 @@ import (
 // © geekbrains.ru 19
 // 6. Программа должна уведомлять пользователя об ошибках, возникающих во время
 // выполнения
+
+import (
+	"flag"
+	"fmt"
+	dupremover "go2/dupRemover"
+	"os"
+	"strings"
+)
 
 func main() {
 
@@ -71,17 +73,11 @@ func main() {
 		}
 	}
 
-	*dir = "C:\\gb\\go2\\test"
-	//*dir = "C:\\Users\\sakharov\\go\\src\\go2\\test"
-	//*dir = "c:\\_test\\go1"
-
-	fmt.Println("dir: ", *dir)
-
 	// arguments ok now
 
 	remover := dupremover.New(*dir)
 
-	dups, err := remover.Process(*dir)
+	dups, err := remover.Process()
 	if len(dups) == 0 {
 		fmt.Println("No duplicates found")
 		return
@@ -99,7 +95,6 @@ func main() {
 		fmt.Println("Do you want to remove the duplicate files?. No or yes?")
 		fmt.Scan(&resp)
 		resp = strings.ToLower(resp)
-		fmt.Println("." + resp + ".")
 		if resp == "yes" {
 			errs := remover.Remove()
 			if len(errs) > 0 {
@@ -111,6 +106,4 @@ func main() {
 			fmt.Println("Done.")
 		}
 	}
-	//dupremover.Remove()
-	fmt.Printf("Duplicate files: %v ", len(dups))
 }
